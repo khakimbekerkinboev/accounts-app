@@ -1,45 +1,88 @@
 <ul class="nav nav-tabs">
   <li class="nav-item">
-    <a class="nav-link" href="#">Income</a>
+    <a class="nav-link" (click)="changeTab('income')" [class.active]="currentTab == 'income'">Income</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link  active" href="#">Outcome</a>
+    <a class="nav-link" (click)="changeTab('outcome')" [class.active]="currentTab == 'outcome'">Outcome</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Loans</a>
+    <a class="nav-link" (click)="changeTab('loans')" [class.active]="currentTab == 'loans'">Loans</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Investments</a>
+    <a class="nav-link" (click)="changeTab('investments')" [class.active]="currentTab == 'investments'">Investments</a>
   </li>
 </ul>
 
-<table class="table">
-  <thead>
-    <tr>
-      <!-- <th scope="col">#</th> -->
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <!-- <th scope="row">1</th> -->
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <!-- <th scope="row">2</th> -->
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <!-- <th scope="row">3</th> -->
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
+<div [ngSwitch]="currentTab">
+  <table class="table" *ngSwitchCase="'income'">
+    <thead>
+      <tr>
+        <th scope="col">Income</th>
+        <th scope="col">Income</th>
+        <th scope="col">Income</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>Income</td>
+        <td>Income</td>
+        <td>Income</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="table" *ngSwitchCase="'outcome'">
+    <thead>
+      <tr>
+        <th scope="col">Outcome</th>
+        <th scope="col">Outcome</th>
+        <th scope="col">Outcome</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>Outcome</td>
+        <td>Outcome</td>
+        <td>Outcome</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="table" *ngSwitchCase="'loans'">
+    <thead>
+      <tr>
+        <th scope="col">Loans</th>
+        <th scope="col">Loans</th>
+        <th scope="col">Loans</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>Loans</td>
+        <td>Loans</td>
+        <td>Loans</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="table" *ngSwitchCase="'investments'">
+    <thead>
+      <tr>
+        <th scope="col">Investments</th>
+        <th scope="col">Investments</th>
+        <th scope="col">Investments</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>Investments</td>
+        <td>Investments</td>
+        <td>Investments</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

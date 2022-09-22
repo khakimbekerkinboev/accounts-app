@@ -2,10 +2,10 @@
   <div class="card-body">
     <h5 class="card-title">Welcome!</h5>
     <p class="card-text">This page shows a number of transaction details.</p>
-    <a href="#" class="btn btn-primary">See transactions</a>
+    <a class="btn btn-primary" routerLink="/navigator">See transactions</a>
   </div>
   <div class="card-footer text-muted">
-    You have 100 transactions
+    You have {{numOfAllTransactions}} transactions
   </div>
 </div>
 
@@ -13,18 +13,18 @@
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">123</h5>
+        <h5 class="card-title">{{numOfIncome}}</h5>
         <p class="card-text">Income</p>
-        <a href="#" class="btn btn-primary">See all</a>
+        <a class="btn btn-primary" routerLink="/navigator" [queryParams]="{tab:0}">See all</a>
       </div>
     </div>
   </div>
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">123</h5>
+        <h5 class="card-title">{{numOfInvestments}}</h5>
         <p class="card-text">Investments</p>
-        <a href="#" class="btn btn-primary">See all</a>
+        <a href="#" class="btn btn-primary" routerLink="/navigator" [queryParams]="{tab:3}">See all</a>
       </div>
     </div>
   </div>
@@ -34,18 +34,18 @@
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">123</h5>
+        <h5 class="card-title">{{numOfOutcome}}</h5>
         <p class="card-text">Outcome</p>
-        <a href="#" class="btn btn-primary">See all</a>
+        <a href="#" class="btn btn-primary" routerLink="/navigator" [queryParams]="{tab:1}">See all</a>
       </div>
     </div>
   </div>
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">123</h5>
+        <h5 class="card-title">{{numOfLoans}}</h5>
         <p class="card-text">Loans</p>
-        <a href="#" class="btn btn-primary">See all</a>
+        <a href="#" class="btn btn-primary" routerLink="/navigator" [queryParams]="{tab:2}">See all</a>
       </div>
     </div>
   </div>

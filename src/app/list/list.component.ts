@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
+import { GetDataService } from '../get-data.service';
 
 @Component({
   selector: 'app-list',
@@ -8,7 +10,16 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
 })
 export class ListComponent implements OnInit {
   currentTab: string = 'income';
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  income: any[] = [];
+  outcome: any[] = [];
+  loans: any[] = [];
+  investments: any[] = [];
+
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private getData: GetDataService
+  ) {}
 
   changeTab(tabName: string) {
     this.currentTab = tabName;
@@ -55,6 +66,24 @@ export class ListComponent implements OnInit {
           this.currentTab = 'investments';
           break;
       }
+    });
+
+    this.getData.getJSON().subscribe((data: any) => {
+      this.income = data.data.filter(
+        (transaction: any) => transaction.type == 'income'
+      );
+
+      this.outcome = data.data.filter(
+        (transaction: any) => transaction.type == 'outcome'
+      );
+
+      this.loans = data.data.filter(
+        (transaction: any) => transaction.type == 'loan'
+      );
+
+      this.investments = data.data.filter(
+        (transaction: any) => transaction.type == 'investment'
+      );
     });
   }
 }

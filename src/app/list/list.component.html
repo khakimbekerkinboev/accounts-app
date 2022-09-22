@@ -17,17 +17,19 @@
   <table class="table" *ngSwitchCase="'income'">
     <thead>
       <tr>
-        <th scope="col">Income</th>
-        <th scope="col">Income</th>
-        <th scope="col">Income</th>
+        <th scope="col">Full Name</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Company</th>
+        <th scope="col">Phone</th>
       </tr>
     </thead>
 
     <tbody>
-      <tr>
-        <td>Income</td>
-        <td>Income</td>
-        <td>Income</td>
+      <tr *ngFor="let income of income">
+        <td>{{income.name.first}} {{income.name.last}}</td>
+        <td>{{income.amount}}</td>
+        <td>{{income.company}}</td>
+        <td>{{income.phone}}</td>
       </tr>
     </tbody>
   </table>
@@ -35,17 +37,19 @@
   <table class="table" *ngSwitchCase="'outcome'">
     <thead>
       <tr>
-        <th scope="col">Outcome</th>
-        <th scope="col">Outcome</th>
-        <th scope="col">Outcome</th>
+        <th scope="col">Full Name</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Company</th>
+        <th scope="col">Phone</th>
       </tr>
     </thead>
 
     <tbody>
-      <tr>
-        <td>Outcome</td>
-        <td>Outcome</td>
-        <td>Outcome</td>
+      <tr *ngFor="let outcome of outcome">
+        <td>{{outcome.name.first}} {{outcome.name.last}}</td>
+        <td>{{outcome.amount}}</td>
+        <td>{{outcome.company}}</td>
+        <td>{{outcome.phone}}</td>
       </tr>
     </tbody>
   </table>
@@ -53,17 +57,19 @@
   <table class="table" *ngSwitchCase="'loans'">
     <thead>
       <tr>
-        <th scope="col">Loans</th>
-        <th scope="col">Loans</th>
-        <th scope="col">Loans</th>
+        <th scope="col">Full Name</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Company</th>
+        <th scope="col">Phone</th>
       </tr>
     </thead>
 
     <tbody>
-      <tr>
-        <td>Loans</td>
-        <td>Loans</td>
-        <td>Loans</td>
+      <tr *ngFor="let loan of loans">
+        <td>{{loan.name.first}} {{loan.name.last}}</td>
+        <td>{{loan.amount}}</td>
+        <td>{{loan.company}}</td>
+        <td>{{loan.phone}}</td>
       </tr>
     </tbody>
   </table>
@@ -71,17 +77,19 @@
   <table class="table" *ngSwitchCase="'investments'">
     <thead>
       <tr>
-        <th scope="col">Investments</th>
-        <th scope="col">Investments</th>
-        <th scope="col">Investments</th>
+        <th scope="col">Full Name</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Company</th>
+        <th scope="col">Phone</th>
       </tr>
     </thead>
 
     <tbody>
-      <tr>
-        <td>Investments</td>
-        <td>Investments</td>
-        <td>Investments</td>
+      <tr *ngFor="let investment of investments">
+        <td>{{investment.name.first}} {{investment.name.last}}</td>
+        <td>{{investment.amount}}</td>
+        <td>{{investment.company}}</td>
+        <td>{{investment.phone}}</td>
       </tr>
     </tbody>
   </table>

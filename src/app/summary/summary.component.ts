@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { GetDataService } from '../get-data.service';
 
 @Component({
   selector: 'app-summary',
@@ -13,14 +14,10 @@ export class SummaryComponent implements OnInit {
   numOfLoans: number = 0;
   numOfInvestments: number = 0;
 
-  constructor(private http: HttpClient) {}
-
-  public getJSON() {
-    return this.http.get('../assets/data/transactions.json');
-  }
+  constructor(private getData: GetDataService) {}
 
   ngOnInit(): void {
-    this.getJSON().subscribe((data: any) => {
+    this.getData.getJSON().subscribe((data: any) => {
       this.numOfAllTransactions = data.total;
 
       this.numOfIncome = data.data.filter(
